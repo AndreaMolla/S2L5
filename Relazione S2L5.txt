@@ -1,0 +1,114 @@
+Andrea Molla 08/03/2024
+
+┏ ___           _                ___                         _ 
+(  _ \ _      ( )              (  _ \                      ( )
+| ( (_)_)_ _  | |__    __  _ __| (_(_)  _ _ _   _   _ _   _| |
+| |  _| |  _ \|  _  \/ __ \  __)\__ \ / _  ) ) ( )/ _  )/ _  |
+| (_( ) | (_) ) | | |  ___/ |  ( )_) | (_) | (_) | (_| | (_| |
+(____/(_)  __/(_) (_)\____)_)   \____)\__  |\___/ \__ _)\__ _)
+        | |                              | |                  
+        (_)                              (_)                  
+
+         
+
+
+Il programma è una calcolatrice limitata alla moltiplicazione e alla divisione, ha un menù di scelta per accedere 
+all'area interessata.
+
+La prima imprecisione è lo spazio presente tra la funzione e le parentesi tonde, di solito non si mette lo spazio
+per una questione di pulizia del codice:
+Riga 3, 4, 5, 6, 9, 34, 43, 56, 73
+
+Sempre per lo stesso motivo di pulizia lo spazio aggiuntivo  tra int main() e la parentesi graffa non ci dovrebbe essere:
+Riga 10
+
+Un'altro errore sono le graffe presenti nel 'char scelta', andrebbe scritto in questo modo 'char scelta = '\0';':
+Riga 12
+
+Per questione di pulizia nel codice lo spazio tra il nome della nome funzione e le parentesi non ci dovrebbe essere:
+Riga 13, 14, 16, 36, 37, 38, 46, 47, 48, 52, 59, 60, 61, 62, 66, 76, 77
+
+E' presente un errore nel scaf, il %d non è corretto perché si riferisce a dei numeri invece noi vogliamo riferirci a dei caratteri, per questo motivo si sostituisce con %c che fa riferimento ai caratteri:
+Riga 14
+
+Sempre nello scaf, sarebbe corretto inserire uno spazio prima del %c per risolvere il problema dell'invio, 
+scanf (" %c", &scelta); in questo modo:
+Riga 14
+
+Una miglioria che si potrebbe fare, sarebbe quella di inserire nei case la possibilità di utilizzare le lettere minuscole:
+Riga 18, 21, 24
+
+Per pulizia del codice sarebbe giusto indentare nel modo corretto:
+Riga 19, 20, 29, 61, 75
+
+Nello switch manca il default nel caso in cui l'utente inserisca un valore diverso da quelli previsti, 
+Esempio di default: 
+printf("Il valore inserito non è tra quelli consentiti!\n");
+exit(1);
+Per migliorare il codice si potrebbe inserire un ciclo di do-while con l'aggiunta di scelta del carattere D per chiedere all'utente se vuole uscire dal programma 
+Riga 16
+
+Dentro la funzione moltiplica il short int è scritto in modo scorretto, il modo corretto in cui scriverlo:
+int  a = 0,b = 0;
+Riga 45
+
+Per motivi di pulizia del output sarebbe consono mettere il \n alla fine dei printf:
+Riga 46, 52, 59, 61, 66
+
+Nel scaf è sbagliato mettere %f è corretto mettere %d:
+Riga 47
+
+Per poter ottenere un risultato congruo a livello di range è meglio usare int prodotto = (int)a*b; invece di 
+short int prodotto = a * b;
+Riga 50
+Essendo che si è corretto in short int è doveroso mettere %hd nel printf:
+Riga 52
+
+Nella funzione dividi l'int è scritto in modo scorretto, il modo corretto in cui scriverlo:
+int  a = 0,b = 0;
+
+E' presente un'errore di italiano invece di numeratore andrebbè scritto numeratore:
+Riga 61 
+
+Nel scanf va introdotto un controllo sul denominatore che deve essere diverso da 0:
+Riga 67
+
+Int divisione non è corretto perchè con la divisione potremmo avere come risultato un numero non intero, e il % non è corretto servirebbe il /, quindi il modo corretto di scriverlo sarebbe:
+float divisione = (float)a / b; 
+Riga 54
+
+Nel printf l'ultimo %d sarebbe da sostituire con %f:
+Riga 66
+
+Nell scanf della funzione stringa, va introdotto un controllo in caso la stringa inserita abbia più di 9 caratteri
+Riga 77 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
