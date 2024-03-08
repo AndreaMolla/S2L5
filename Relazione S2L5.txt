@@ -10,8 +10,6 @@ Andrea Molla 08/03/2024
         (_)                              (_)                  
 
          
-
-
 Il programma è una calcolatrice limitata alla moltiplicazione e alla divisione, ha un menù di scelta per accedere 
 all'area interessata.
 
